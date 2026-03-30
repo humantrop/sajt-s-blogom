@@ -19,7 +19,7 @@ export default function Home() {
           loop
           playsInline
         >
-          <source src="/video.mp4" type="video/mp4" />
+          <source src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/video.mp4`} type="video/mp4" />
         </video>
         <div className={styles.heroOverlay} />
         <div className={styles.heroContent}>
