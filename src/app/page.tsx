@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { getAllBlogPosts } from '@/lib/blog';
+import Newsletter from '@/components/Newsletter/Newsletter';
 import styles from './page.module.css';
 
 export default function Home() {
@@ -130,6 +131,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Newsletter */}
+      <Newsletter />
     </main>
   );
 }

@@ -1,3 +1,33 @@
+.hero {
+  position: relative;
+  height: 66.67vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.heroOverlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+}
+
+.heroTitle {
+  position: relative;
+  z-index: 1;
+  color: #fff;
+  font-size: 3rem;
+  font-weight: 700;
+  text-align: center;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  max-width: 800px;
+  padding: 0 2rem;
+}
+
 .container {
   max-width: 780px;
   margin: 0 auto;
@@ -147,6 +177,15 @@
 }
 
 @media (max-width: 768px) {
+  .hero {
+    height: 50vh;
+  }
+
+  .heroTitle {
+    font-size: 2rem;
+    padding: 0 1.5rem;
+  }
+
   .container {
     padding: 1.5rem;
   }

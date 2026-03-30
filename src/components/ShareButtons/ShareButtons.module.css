@@ -1,0 +1,59 @@
+.shareSection {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding-top: 2rem;
+  margin-top: 3rem;
+  border-top: 1px solid var(--border);
+}
+
+.shareLabel {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--foreground);
+}
+
+.shareButtons {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.shareButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #fff;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.shareButton:hover {
+  opacity: 0.85;
+}
+
+.facebook {
+  background-color: #1877f2;
+}
+
+.twitter {
+  background-color: #000;
+}
+
+.linkedin {
+  background-color: #0a66c2;
+}
+
+@media (max-width: 768px) {
+  .shareButtons {
+    flex-direction: column;
+  }
+
+  .shareButton {
+    justify-content: center;
+  }
+}

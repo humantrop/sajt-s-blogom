@@ -1,6 +1,7 @@
 import { notFound } from 'next/navigation';
 import { getBlogPostBySlug, getAllBlogPostSlugs } from '@/lib/blog';
 import Link from 'next/link';
+import ShareButtons from '@/components/ShareButtons/ShareButtons';
 import styles from './page.module.css';
 
 interface Props {
@@ -41,41 +42,55 @@ export default async function BlogPostPage(props: Props) {
   }
 
   return (
-    <main className={styles.container}>
-      <article className={styles.article}>
-        <header className={styles.header}>
-          <h1 className={styles.title}>{post.title}</h1>
-          <div className={styles.meta}>
-            <time dateTime={post.date}>
-              {new Date(post.date).toLocaleDateString('sr-RS', {
-                year: 'numeric',
-                month: 'long',
-                day: 'numeric',
-              })}
-            </time>
-            {post.author && <span>&middot; {post.author}</span>}
-            <span>&middot; {post.readingTime} min citanja</span>
-          </div>
-          {post.tags.length > 0 && (
-            <div className={styles.tagList}>
-              {post.tags.map(tag => (
-                <span key={tag} className={styles.tagBadge}>{tag}</span>
-              ))}
+    <main>
+      {post.coverImage && (
+        <section
+          className={styles.hero}
+          style={{ backgroundImage: `url(${post.coverImage})` }}
+        >
+          <div className={styles.heroOverlay} />
+          <h1 className={styles.heroTitle}>{post.title}</h1>
+        </section>
+      )}
+
+      <div className={styles.container}>
+        <article className={styles.article}>
+          <header className={styles.header}>
+            {!post.coverImage && <h1 className={styles.title}>{post.title}</h1>}
+            <div className={styles.meta}>
+              <time dateTime={post.date}>
+                {new Date(post.date).toLocaleDateString('sr-RS', {
+                  year: 'numeric',
+                  month: 'long',
+                  day: 'numeric',
+                })}
+              </time>
+              {post.author && <span>&middot; {post.author}</span>}
+              <span>&middot; {post.readingTime} min citanja</span>
             </div>
-          )}
-        </header>
+            {post.tags.length > 0 && (
+              <div className={styles.tagList}>
+                {post.tags.map(tag => (
+                  <span key={tag} className={styles.tagBadge}>{tag}</span>
+                ))}
+              </div>
+            )}
+          </header>
 
         <div
           className={styles.content}
           dangerouslySetInnerHTML={{ __html: post.contentHtml || '' }}
         />
 
+        <ShareButtons title={post.title} />
+
         <footer className={styles.articleFooter}>
           <Link href="/blog" className={styles.backLink}>
             &larr; Nazad na blog
           </Link>
         </footer>
-      </article>
+        </article>
+      </div>
     </main>
   );
 }
