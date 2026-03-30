@@ -13,7 +13,14 @@ export default function Newsletter() {
     setStatus('loading');
 
     try {
-      const res = await fetch('/api/subscribe', {
+      const apiUrl = process.env.NEXT_PUBLIC_SUBSCRIBE_API_URL;
+      if (!apiUrl) {
+        setStatus('error');
+        setMessage('Servis za pretplatu nije konfigurisan.');
+        return;
+      }
+
+      const res = await fetch(apiUrl, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email }),
