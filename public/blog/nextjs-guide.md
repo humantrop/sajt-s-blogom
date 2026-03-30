@@ -4,6 +4,7 @@ date: 2024-03-21
 author: Admin
 excerpt: Upoznajte osnovne koncepte korišćenja Next.js za izgradnju blogova
 tags: ["razvoj", "Next.js"]
+coverImage: /slika-2.jpg
 ---
 
 # Next.js za blogove

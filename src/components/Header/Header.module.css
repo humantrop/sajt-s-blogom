@@ -4,19 +4,43 @@
   justify-content: space-between;
   padding: 1.25rem 3rem;
   border-bottom: 1px solid var(--border);
+  position: relative;
+  z-index: 100;
+  background: var(--background);
+}
+
+/* Transparent variant for homepage */
+.header.transparent {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: transparent;
+  border-bottom: none;
+}
+
+.header.transparent .logo,
+.header.transparent .navLink {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.header.transparent .logo:hover,
+.header.transparent .navLink:hover {
+  color: #ffffff;
 }
 
 .logo {
-  font-size: 1.5rem;
-  font-weight: 700;
+  font-size: 1.25rem;
+  font-weight: 300;
   text-decoration: none;
   color: var(--foreground);
-  letter-spacing: -0.02em;
+  letter-spacing: 0.08em;
+  text-transform: lowercase;
 }
 
 .nav {
   display: flex;
-  gap: 2rem;
+  gap: 2.5rem;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -25,8 +49,10 @@
 .navLink {
   text-decoration: none;
   color: var(--text-muted);
-  font-size: 0.95rem;
-  transition: color 0.2s;
+  font-size: 0.9rem;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  transition: color 0.3s;
 }
 
 .navLink:hover {
@@ -40,5 +66,13 @@
 
   .nav {
     gap: 1.25rem;
+  }
+
+  .logo {
+    font-size: 1.1rem;
+  }
+
+  .navLink {
+    font-size: 0.85rem;
   }
 }

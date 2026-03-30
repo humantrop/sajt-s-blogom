@@ -4,6 +4,7 @@ date: 2024-03-20
 author: Admin
 excerpt: Ovo je prvi post na našem novom blogu napravljen sa Next.js
 tags: ["AI", "blog"]
+coverImage: /slika-3.jpg
 ---
 
 # Dobrodošli!

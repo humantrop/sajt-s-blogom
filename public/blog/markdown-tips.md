@@ -4,6 +4,7 @@ date: 2024-03-22
 author: Admin
 excerpt: Otkrijte koliko je Markdown koristan za pisanje sadržaja
 tags: ["alati", "pisanje"]
+coverImage: /slika-1.jpg
 ---
 
 # Markdown je sjajna opcija
