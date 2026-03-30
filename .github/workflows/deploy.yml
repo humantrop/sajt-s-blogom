@@ -27,6 +27,8 @@ jobs:
 
       - run: npm ci
       - run: npm run build
+        env:
+          NEXT_PUBLIC_SUBSCRIBE_API_URL: https://subscribe-worker.trope93.workers.dev
 
       - uses: actions/upload-pages-artifact@v3
         with:
